@@ -25,7 +25,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/ol.js",
+              "src/assets/js/mapbox-streets-v6-style.js"
+            ]
           },
           "configurations": {
             "production": {
