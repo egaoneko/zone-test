@@ -9468,19 +9468,19 @@ __webpack_require__.r(__webpack_exports__);
  * By default, zone.js will patch all possible macroTask and DomEvents
  * user can disable parts of macroTask/DomEvents patch by setting following flags
  */
-//  (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch requestAnimationFrame
-//  (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
-//  (window as any).__zone_symbol__BLACK_LISTED_EVENTS = ['scroll', 'mousemove', 'pointermove']; // disable patch specified eventNames
-//  (window as any).__Zone_ignore_on_properties = [
-//   {
-//     target: window,
-//     ignoreProperties: ['message']
-//   }, {
-//     target: HTMLElement.prototype,
-//     ignoreProperties: ['mousemove', 'pointermove']
-//   }
-// ];
-// (window as any).__Zone_disable_timer = true;
+window.__Zone_disable_requestAnimationFrame = true; // disable patch requestAnimationFrame
+window.__Zone_disable_on_property = true; // disable patch onProperty such as onclick
+window.__zone_symbol__BLACK_LISTED_EVENTS = ['scroll', 'mousemove', 'pointermove']; // disable patch specified eventNames
+window.__Zone_ignore_on_properties = [
+    {
+        target: window,
+        ignoreProperties: ['message']
+    }, {
+        target: HTMLElement.prototype,
+        ignoreProperties: ['mousemove', 'pointermove']
+    }
+];
+window.__Zone_disable_timer = true;
 /*
 * in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
 * with the following flag, it will bypass `zone.js` patch for IE/Edge
@@ -9504,7 +9504,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/donghyun/Documents/Workspace/etc/zone-test/src/polyfills.ts */"./src/polyfills.ts");
+module.exports = __webpack_require__(/*! /Users/user/workspace/personal/zone-test/src/polyfills.ts */"./src/polyfills.ts");
 
 
 /***/ })
