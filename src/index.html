@@ -7,9 +7,17 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=URL"></script>
   <script>
-    __Zone_disable_requestAnimationFrame = true; // disable patch requestAnimationFrame
+    var params = (new URL(document.location.href)).searchParams;
+    var _requestAnimationFrame = params.get('requestAnimationFrame') === 'false' ? false : true;
+    var _timers = params.get('timers') === 'false' ? false : true;
+    var _xhr = params.get('xhr') === 'false' ? false : true;
+
     __Zone_disable_on_property = true; // disable patch onProperty such as onclick
+    __Zone_disable_requestAnimationFrame = _requestAnimationFrame; // disable patch requestAnimationFrame
+    __Zone_disable_timers = _timers;
+    __Zone_disable_XHR = _xhr;
     __zone_symbol__BLACK_LISTED_EVENTS = ['scroll', 'mousemove', 'pointermove']; // disable patch specified eventNames
     __Zone_ignore_on_properties = [
       {
@@ -20,8 +28,6 @@
         ignoreProperties: ['mousemove', 'pointermove']
       }
     ];
-    __Zone_disable_timer = true;
-
     (function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='//rawgit.com/mrdoob/stats.js/master/build/stats.min.js';document.head.appendChild(script);})()
   </script>
 </head>
